@@ -1,0 +1,16 @@
+<?php use Fisharebest\Webtrees\I18N; ?>
+
+<div class="row">
+    <div class="col-sm-8">
+        <form method="post" action="<?= e(route(Fisharebest\Webtrees\Module\TestPostModule::class . ':doPost', ['tree' => $tree->name()])) ?>">
+            <?= csrf_field() ?>
+            <div class="form-group">
+                <label for="content"><?= I18N::translate('Your Content') ?></label>
+                <textarea class="form-control" id="content" name="content" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">
+                <?= I18N::translate('Submit') ?>
+            </button>
+        </form>
+    </div>
+</div>
